@@ -7,12 +7,13 @@ A program was developed for classifying headlines into categories: Internet, Spa
 ## Information about the Data:
 The dataset was prepared independently. It consists of a set of article headlines from popular science magazines and news articles in English. The article headlines are divided into three categories: Space, Science, and Internet. The electronic resources used are listed below:
 
-https://phys.org/space-news/
-https://www.newscientist.com/subject/space/
-https://www.science.org/journals
-https://techxplore.com/internet-news/
-https://www.bbc.com/news
-https://www.ijis.net/
+1. https://phys.org/space-news/
+2. https://www.newscientist.com/subject/space/
+3. https://www.science.org/journals
+4. https://techxplore.com/internet-news/
+5. https://www.bbc.com/news
+6. https://www.ijis.net/
+
 The data is complete. Each data instance has two attributes: the first is a string attribute, and the second is a nominal attribute.
 
 The string attribute accepts any string as a value, i.e., the article headline.
@@ -20,17 +21,18 @@ The nominal attribute accepts the class value (space, science, internet).
 The total number of data instances is 498.
 
 ### Class Distribution:
-space – 166 [33.333%]
-science – 166 [33.333%]
-internet – 166 [33.333%]
+- space – 166 [33.333%]
+- science – 166 [33.333%]
+- internet – 166 [33.333%]
+
 A file with stop words, which do not affect the meaning of the text and could negatively influence classification results, was also created.
 
 ### Training the Model:
 Two-thirds of the entire dataset (332 instances) are used for training the model, split into 3 files:
 
-498internet.txt (111 instances)
-498science.txt (110 instances)
-498space.txt (111 instances)
+- 498internet.txt (111 instances)
+- 498science.txt (110 instances)
+- 498space.txt (111 instances)
 
 ### Testing the Model:
 A file with one-third of the data (166 instances) is created for testing the model: 498test.txt.
