@@ -15,7 +15,8 @@
 
 using namespace std;
 
-/* structure that describes data about a word
+/*
+* structure that describes data about a word
 * words_in_class	 - the number of occurrences of the word in each class
 * norm_prob_in_class - the normalized probability of meeting the word in each class
 */
@@ -55,7 +56,8 @@ int main()
 }
 
 
-/* Function that builds classification model
+/*
+* Function that builds classification model
 * words_info		- a hash table (key - word, value - information about this word)
 * common_words		- words that do not affect the meaning (function words, pronouns, etc.)
 * words_in_dataset	- the number of occurrences of a word in the training dataset
@@ -128,7 +130,8 @@ void training(unordered_map<string, word_data>& words_info)
 }
 
 
-/* a function that performs testing of a classification model
+/*
+* a function that performs testing of a classification model
 * words_info	- a hash-table (key - word, value - information about this word)
 * result		- a vector with classification results
 */
@@ -174,7 +177,8 @@ vector<string> testing(unordered_map<string, word_data>& words_info)
                 end_pos = str.length();
         }
 
-        /* definition of the maximum probability among classes and storing the corresponding
+        /*
+        * definition of the maximum probability among classes and storing the corresponding
 		* classification result for the instance in the results vector (result)
 		*/
 		// determining max probability belonging sentences to classes
@@ -197,7 +201,7 @@ void check_result(vector<string>& result)
     string answer;
     int corr_classif = 0, i = 0;
 
-    answ_file.open("498answers.txt", ios::in);
+    answ_file.open("sources/498answers.txt", ios::in);
     if(!answ_file) // check if file with training data is opening
     {
         cout << "Cannot open the file '498answers.txt' (((" << endl;
@@ -206,7 +210,8 @@ void check_result(vector<string>& result)
 
     cout << "Classification results:" << endl << endl;
     cout << "No.  classified as:\tcorrect answer:" << endl;
-    do{
+    do
+    {
         answ_file >> answer;
         if(result[i] == answer)
             corr_classif++;
@@ -222,7 +227,8 @@ void check_result(vector<string>& result)
     cout << "Incorrectly classified: " << result.size()-corr_classif << "\t[ " << 100./result.size()*(result.size()-corr_classif) << "% ]" << endl;
 }
 
-/* calculating the normalized probability of the word's relation to a class
+/*
+* calculating the normalized probability of the word's relation to a class
 * words_in_dataset	- the number of occurrences of the word in the training dataset
 * words_in_class	- the number of occurrences of the word in the class
 */
